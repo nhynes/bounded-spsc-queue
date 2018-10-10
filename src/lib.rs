@@ -1,10 +1,11 @@
 #![feature(allocator_api)]
+#![feature(alloc)]
 
+extern crate alloc as rust_alloc;
 extern crate core;
 
-use core::alloc::Layout;
 use core::{mem, ptr};
-use std::alloc;
+use rust_alloc::alloc::{self, Layout};
 use std::cell::Cell;
 use std::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::Arc;
